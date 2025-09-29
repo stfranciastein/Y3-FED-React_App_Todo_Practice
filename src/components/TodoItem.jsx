@@ -6,14 +6,14 @@ export default function TodoItem({ todo, markAsDone, deleteTodoItem }) { //whene
             {todo.done ? (
                 <>
                     <span className="done">{todo.text}</span>
-                    <span className="float-end">&#128077;</span>
-                    <Badge pill bg="danger" className="float-end" onClick={() => deleteTodoItem(todo.id)} style={{ cursor: "pointer" }}>Delete</Badge>
+                    {/* <span className="float-end">&#128077;</span> */}
+                    <span className="text-secondary float-end pe-1" onClick={() => deleteTodoItem(todo.id)} style={{ cursor: "pointer" }}>Delete</span>
                 </>
             ) : (
                 <>
                     <span>{todo.text}</span>
-                    <Badge pill bg="success" className="float-end" onClick={() => markAsDone(todo.id)} style={{ cursor: "pointer" }}>&#10003;</Badge>
-                    <Badge pill bg="danger" className="float-end" onClick={() => deleteTodoItem(todo.id)} style={{ cursor: "pointer" }}>Delete</Badge>
+                    <Badge pill bg="success" className="float-end me-1" onClick={() => markAsDone(todo.id)} style={{ cursor: "pointer" }}>&#10003;</Badge>
+                    <span className="text-secondary float-end pe-1" onClick={() => deleteTodoItem(todo.id)} style={{ cursor: "pointer" }}>Delete</span>
                 </>
             )}
         </ListGroupItem>

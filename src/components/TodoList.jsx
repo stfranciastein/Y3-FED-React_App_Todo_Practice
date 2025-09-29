@@ -55,8 +55,10 @@ export default function TodoList() {
     };
 
     const deleteTodoItem = (id) => {
+        if (confirm("Are you sure about that?") === true){
         const newList = list.filter(item => item.id !== id);
         setList(newList);
+        }
     };
 
     let todoItems = list.map((item, index) => {
